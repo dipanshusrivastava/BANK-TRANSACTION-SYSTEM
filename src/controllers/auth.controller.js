@@ -38,7 +38,7 @@ async function userLoginController(req, res) {
 
   const userExists = await userModel.findOne({
     email,
-  });
+  }).select("+password");
 
   if (!userExists)
     return res.send(
