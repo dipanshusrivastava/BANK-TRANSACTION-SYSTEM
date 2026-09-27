@@ -18,8 +18,8 @@ const accountSchema = new mongoose.Schema(
     },
     currency: {
       type: String,
-      required: [true, "currency is required for creating an accoung"],
-      defaul: "INR",
+      required: [true, "currency is required for creating an account"],
+      default: "INR",
     },
   },
   { timestamps: true },
@@ -29,4 +29,4 @@ accountSchema.index({ user: 1, status: 1 });
 
 const accountModel = mongoose.model("account", accountSchema);
 
-module.expors = accountModel;
+module.exports = accountModel;
